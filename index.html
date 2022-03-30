@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="./style.css">
     <script src="model/items.js"></script>
    
-    <script src="model/jquery.min.js"></script>	
+    <script src="model/jquery.min.js"></script>
+    <script src="model/jquery-ui.min.js"></script>		
 		
     <script src="model/script.js"></script>
 
    
 </head>
 <body>
+    
     <div class="carttool hiddentool">
         <input type="button" value="remove" class="removebutton hidden">
         <input type="button" value="+" class="amount_controler" id="quantatiyplus">
@@ -24,7 +26,8 @@
     
 
     </div>
-    <div class="bill hiddenbill">
+    <div class="res"></div>
+    <div class="bill hiddenbill" id="bill">
         <label>subtotal</label>
         <label id="subtotal"></label>
         <label>delivery</label>

@@ -1,4 +1,14 @@
 let cart=[]
+
+    function myHelper( event ) {
+       
+        console.log(event.target)
+        
+        
+        
+        return `<img src='${event.target.src}' class='itemimage'/>`;
+      }
+    
 function render(){
 $( ()=>{
     for(let element of items){
@@ -7,10 +17,18 @@ $( ()=>{
         newitem.children(".itemprice").html(`${element.price}`)
         newitem.children(".itemimage").attr("src",element.imagsrc)
         
-    //    $("body").on("click",".buybutton",function(){
-    //        movetocart($(this))
-    //       // editbill(e);
-    //    })
+        $("body").children(".container").children(".menue").children(".item").children(".itemimage").draggable({
+            stop: function (event, ui) {
+                console.log(ui.position.left)
+                if(ui.position.left> 650){
+                movetocart($(this).siblings(".buybutton"))
+                billrender();
+                }
+                
+            },
+            helper:myHelper,
+            containment:".container"
+        });
 
     }
 }
@@ -30,7 +48,8 @@ $(()=>{
         $("body").on("click",".removebutton",function(){
             remove($(this))
             })
-
+        
+        
 })
 function movetocart(e){
    $(()=>{
@@ -40,6 +59,18 @@ function movetocart(e){
         pursheditem.children(".buybutton").remove()
         $(carttool).appendTo(pursheditem)
         pursheditem.appendTo(".cart")
+        $("body").children(".container").children(".cart").children(".item").children(".itemimage").draggable({
+            stop: function (event, ui) {
+                console.log(ui.position.left)
+                if(ui.position.left< 650){
+                remove($(this).siblings(".carttool").children(".removebutton"))
+                billrender();
+                }
+                
+            },
+            helper:myHelper,
+            containment:".container"
+        });
         let itemname=pursheditem.children(".itemname").html()
         let itemprice=pursheditem.children(".itemprice").html()
         let itemamount=1
@@ -49,6 +80,7 @@ function movetocart(e){
             amount:itemamount
         }
         cart.push(item)
+
         billrender()
        
    })
