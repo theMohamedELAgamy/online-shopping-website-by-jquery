@@ -1,0 +1,102 @@
+.container{
+    display: flex;
+    flex-direction: row;}
+.menue {
+    width:35%;
+    height: 100%;
+    background-color: aqua;
+    margin: 40px;
+    text-align: center;
+    border-radius: 10px;
+
+    
+
+
+}
+.cart{
+    width:65%;
+    height: 100%;
+    background-color: rgb(64, 231, 13);
+    margin: 40px;
+    text-align: center;
+    border-radius: 10px;
+
+
+
+}
+.item.hidden { display: none; }
+.bill.hiddenbill { display: none; }
+
+.carttool.hiddentool { display: none; }
+
+.item{
+    display: flex;
+    flex-direction: row; 
+}
+
+.itemimage{
+    width: 100px;
+    height: 100px;
+    margin:15px;
+    border-radius: 10px;
+    
+}
+.itemname{
+    text-align:middle ;
+    
+    margin:15px;
+}
+.itemprice{
+    text-align: center;
+    margin:15px;
+
+}
+.buybutton{
+    width: 50px;
+    height: 50px;
+    margin:15px;
+    margin-left: 30px;
+    border-radius: 10px;
+    background-color: blue;
+
+}
+.removebutton{
+    width: 60px;
+    height: 35px;
+    margin:15px;
+    margin-left: 30px;
+    border-radius: 10px;
+    background-color: rgb(230, 19, 19);
+}
+.carttool{
+    display: flex;
+    flex-direction: row;
+}
+.amount_controler{
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    margin-top:15px;
+    
+
+}
+.carttool label{
+    margin: 15px;
+    text-align: center;
+    font-size: 25px;
+    color: brown;
+}
+.bill{
+    
+    text-align: left;
+    width: 400px;
+    height: 150px;
+    background-color: aquamarine;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 7px;
+
+}
+.item label{
+    margin:15px;
+}
