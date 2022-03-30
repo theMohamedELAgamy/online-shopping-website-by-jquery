@@ -47,6 +47,7 @@ $(()=>{
         })
         $("body").on("click",".removebutton",function(){
             remove($(this))
+            
             })
         
         
